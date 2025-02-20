@@ -41,14 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Center(
                 child: Consumer<MetaMaskProvider>(
                   builder: (context, provider, child) {
-                    late final String text; //check the state and display it
+                    late final String text;
 
                     if (provider.isConnected && provider.isInOperatingChain) {
                       text = 'Connected'; //connected
                     } else if (provider.isConnected &&
                         !provider.isInOperatingChain) {
                       text =
-                          'Wrong chain. Please connect to ${MetaMaskProvider.operatingChain}'; //wrong chain, what chain it should be connected to
+                          'Wrong chain. Please connect to ${MetaMaskProvider.operatingChain}';
                     } else if (provider.isEnabled) {
                       return Column(
                         mainAxisSize: MainAxisSize.min,
